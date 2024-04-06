@@ -11,11 +11,14 @@ const Navbar = () => {
         <Link to="/customer" className="hover:text-amber-950">
           Customer
         </Link>
+      </div>
+
+      <div className=" flex gap-4">
         <Link to="/cart" className="hover:text-amber-950">
           Cart
         </Link>
+        <p>0</p>
       </div>
-      <div className="">Cart Count</div>
     </nav>
   );
 };

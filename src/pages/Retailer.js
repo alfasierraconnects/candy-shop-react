@@ -1,28 +1,44 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { StoreContext } from "../context/StoreContext";
 
 const Retailer = () => {
-  // const { setRetailList } = useContext(StoreContext);
+  const [invalidInput, setInvalidInput] = useState(false);
+  const { addToRetailList } = useContext(StoreContext);
 
-  const addToRetailList = (event) => {
+  const updateRetailListHandler = (event) => {
     event.preventDefault();
 
-    const newList = {
-      _id: Math.random(),
-      candyName: event.target.candyName.value,
-      description: event.target.description.value,
-      price: event.target.price.value,
-      quantity: event.target.quantity.value,
-    };
+    if (
+      event.target.candyName.value.trim() !== "" &&
+      event.target.description.value.trim() !== ""
+    ) {
+      const newList = {
+        _id: Math.random(),
+        candyName: event.target.candyName.value,
+        description: event.target.description.value,
+        price: event.target.price.value,
+        quantity: event.target.quantity.value,
+      };
 
-    console.log(newList);
-    // setRetailList((prev) => [...prev, newList]);
+      addToRetailList(newList);
+      setInvalidInput(false);
+
+      event.target.candyName.value = "";
+      event.target.description.value = "";
+      event.target.price.value = "";
+      event.target.quantity.value = "";
+    } else {
+      setInvalidInput(true);
+    }
   };
 
   return (
-    <div className="flex justify-center py-20">
+    <div className="flex flex-col items-center py-20">
+      {invalidInput && (
+        <p className="text-center text-red-600 font-medium">Invalid Input</p>
+      )}
       <form
-        onSubmit={addToRetailList}
+        onSubmit={updateRetailListHandler}
         className="flex flex-col justify-center gap-4 bg-white shadow-md rounded p-8 w-1/3"
       >
         <input

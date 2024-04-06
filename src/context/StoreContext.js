@@ -1,23 +1,27 @@
-// import React, { useContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
-// // export const StoreContext = React.createContext();
+export const StoreContext = createContext(null);
 
-// const StoreContextProvider = (props) => {
-//   const [retailList, setRetailList] = useState([]);
-//   const [cartItems, setCartItems] = useState({});
+const StoreContextProvider = (props) => {
+  const [retailList, setRetailList] = useState([]);
+  // const [cartItems, setCartItems] = useState({});
 
-//   const contextValue = {
-//     retailList,
-//     setRetailList,
-//     cartItems,
-//     setCartItems,
-//   };
+  const addToRetailList = (data) => {
+    console.log(data);
+    setRetailList((prev) => [...prev, data]);
+  };
 
-//   return (
-//     <StoreContext.Provider value={contextValue}>
-//       {props.children}
-//     </StoreContext.Provider>
-//   );
-// };
+  const contextValue = {
+    retailList,
+    // cartItems,
+    addToRetailList,
+  };
 
-// export default StoreContextProvider;
+  return (
+    <StoreContext.Provider value={contextValue}>
+      {props.children}
+    </StoreContext.Provider>
+  );
+};
+
+export default StoreContextProvider;
