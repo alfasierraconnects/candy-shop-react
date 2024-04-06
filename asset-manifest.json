@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/candy-shop-react/static/css/main.ccaf762a.css",
+    "main.js": "/candy-shop-react/static/js/main.e1b153ce.js",
+    "index.html": "/candy-shop-react/index.html",
+    "main.ccaf762a.css.map": "/candy-shop-react/static/css/main.ccaf762a.css.map",
+    "main.e1b153ce.js.map": "/candy-shop-react/static/js/main.e1b153ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ccaf762a.css",
+    "static/js/main.e1b153ce.js"
+  ]
+}
