@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { StoreContext } from "../context/StoreContext";
+import { v4 as uuidv4 } from "uuid";
 
 const Retailer = () => {
   const [invalidInput, setInvalidInput] = useState(false);
@@ -13,7 +14,7 @@ const Retailer = () => {
       event.target.description.value.trim() !== ""
     ) {
       const newList = {
-        _id: Math.random(),
+        _id: uuidv4(),
         candyName: event.target.candyName.value,
         description: event.target.description.value,
         price: event.target.price.value,
