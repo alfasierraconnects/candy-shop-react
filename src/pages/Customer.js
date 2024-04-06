@@ -7,6 +7,9 @@ const Customer = () => {
 
   return (
     <div className="p-20">
+      <h1 className="text-amber-900 font-semibold text-lg mb-4">
+        Customer Page
+      </h1>
       <div className="text-white font-semibold text-lg grid grid-cols-6 rounded-t-md gap-1 overflow-hidden">
         <p className="col-span-1 text-center bg-amber-500 py-1">Name</p>
         <p className="col-span-1 text-center bg-amber-500 py-1">Description</p>

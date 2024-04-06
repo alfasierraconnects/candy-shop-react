@@ -35,6 +35,9 @@ const Retailer = () => {
 
   return (
     <div className="flex flex-col items-center py-20">
+      <h1 className="text-amber-900 font-semibold text-lg mb-4">
+        Retailer Page
+      </h1>
       {invalidInput && (
         <p className="text-center text-red-600 font-medium animate-pulse">
           Invalid Input

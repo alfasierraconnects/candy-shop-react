@@ -9,8 +9,8 @@ import StoreContextProvider from "./context/StoreContext";
 const App = () => {
   return (
     <div className="min-h-screen bg-amber-200">
-      <Navbar />
       <StoreContextProvider>
+        <Navbar />
         <Routes>
           <Route path="/retailer" element={<Retailer />} />
           <Route path="/customer" element={<Customer />} />
