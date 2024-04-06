@@ -36,7 +36,9 @@ const Retailer = () => {
   return (
     <div className="flex flex-col items-center py-20">
       {invalidInput && (
-        <p className="text-center text-red-600 font-medium">Invalid Input</p>
+        <p className="text-center text-red-600 font-medium animate-pulse">
+          Invalid Input
+        </p>
       )}
       <form
         onSubmit={updateRetailListHandler}
